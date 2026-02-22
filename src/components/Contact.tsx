@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Github, Copy, Check } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -10,6 +12,8 @@ const fadeUp = {
 const Contact = () => {
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const copyEmail = () => {
     navigator.clipboard.writeText("gauthamdv19@gmail.com");
@@ -17,9 +21,28 @@ const Contact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:gauthamdv19@gmail.com?subject=Message from ${formData.name}&body=${formData.message}%0A%0AFrom: ${formData.email}`;
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
+    setSending(true);
+    try {
+      await emailjs.send(
+        "service_s6gpx77",
+        "template_u2w1j4f",
+        {
+          from_name: formData.name.trim(),
+          from_email: formData.email.trim(),
+          message: formData.message.trim(),
+        },
+        "RcY4d3IpnYsf23F-u"
+      );
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -108,7 +131,9 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg bg-muted/50 border border-border/50 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none placeholder:text-muted-foreground/50"
               />
-              <button type="submit" className="glow-button w-full">Send Message</button>
+              <button type="submit" disabled={sending} className="glow-button w-full disabled:opacity-50">
+                {sending ? "Sending..." : "Send Message"}
+              </button>
             </motion.form>
           </div>
         </motion.div>
