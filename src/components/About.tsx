@@ -9,6 +9,7 @@ const fadeUp = {
 const About = () => {
   return (
     <section id="about" className="py-24 relative">
+      <div className="section-divider mb-24" />
       <div className="container mx-auto px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
           <motion.h2 variants={fadeUp} custom={0} className="section-heading text-center">
@@ -22,8 +23,8 @@ const About = () => {
             {/* Education */}
             <motion.div variants={fadeUp} custom={2} className="glass-card p-8 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <GraduationCap className="text-primary" size={24} />
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ background: "hsl(var(--glow-cyan) / 0.1)" }}>
+                  <GraduationCap style={{ color: "hsl(var(--glow-cyan))" }} size={24} />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-lg">Education</h3>
@@ -38,8 +39,8 @@ const About = () => {
             {/* Internship */}
             <motion.div variants={fadeUp} custom={3} className="glass-card p-8 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <Briefcase className="text-secondary" size={24} />
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ background: "hsl(var(--glow-purple) / 0.1)" }}>
+                  <Briefcase style={{ color: "hsl(var(--glow-purple))" }} size={24} />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-lg">Internship</h3>

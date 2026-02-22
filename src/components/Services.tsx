@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Brain, Database, Server, FlaskConical } from "lucide-react";
 
 const items = [
-  { icon: Brain, label: "AI/ML Model Development" },
-  { icon: Database, label: "Data Analysis & Preprocessing" },
-  { icon: Server, label: "Backend Integration with AI" },
-  { icon: FlaskConical, label: "Research & Experimental AI" },
+  { icon: Brain, label: "AI/ML Model Development", color: "text-[hsl(var(--glow-cyan))]", bg: "bg-[hsl(var(--glow-cyan))]/10" },
+  { icon: Database, label: "Data Analysis & Preprocessing", color: "text-[hsl(var(--glow-purple))]", bg: "bg-[hsl(var(--glow-purple))]/10" },
+  { icon: Server, label: "Backend Integration with AI", color: "text-[hsl(var(--glow-pink))]", bg: "bg-[hsl(var(--glow-pink))]/10" },
+  { icon: FlaskConical, label: "Research & Experimental AI", color: "text-[hsl(var(--glow-emerald))]", bg: "bg-[hsl(var(--glow-emerald))]/10" },
 ];
 
 const fadeUp = {
@@ -16,7 +16,8 @@ const fadeUp = {
 const Services = () => (
   <section id="services" className="py-24 relative">
     <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[120px]" />
+      <div className="absolute top-0 left-1/3 w-[300px] h-[300px] rounded-full bg-primary/3 blur-[100px]" />
     </div>
     <div className="container mx-auto px-6 relative z-10">
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
@@ -30,7 +31,9 @@ const Services = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
           {items.map((item, i) => (
             <motion.div key={item.label} variants={fadeUp} custom={i + 2} className="glass-card p-6 text-center transition-all duration-300">
-              <item.icon className="mx-auto mb-4 text-primary" size={28} />
+              <div className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center mx-auto mb-4`}>
+                <item.icon className={item.color} size={24} />
+              </div>
               <p className="text-sm font-medium">{item.label}</p>
             </motion.div>
           ))}

@@ -24,6 +24,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 relative">
+      <div className="section-divider mb-24" />
       <div className="container mx-auto px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
           <motion.h2 variants={fadeUp} custom={0} className="section-heading text-center">
@@ -37,8 +38,8 @@ const Contact = () => {
             {/* Info */}
             <motion.div variants={fadeUp} custom={2} className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="text-primary" size={18} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--glow-cyan) / 0.1)" }}>
+                  <Mail style={{ color: "hsl(var(--glow-cyan))" }} size={18} />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
@@ -52,8 +53,8 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="text-primary" size={18} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--glow-purple) / 0.1)" }}>
+                  <Phone style={{ color: "hsl(var(--glow-purple))" }} size={18} />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
@@ -62,8 +63,8 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="text-primary" size={18} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--glow-pink) / 0.1)" }}>
+                  <MapPin style={{ color: "hsl(var(--glow-pink))" }} size={18} />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
@@ -72,10 +73,10 @@ const Contact = () => {
               </div>
 
               <div className="flex gap-4 pt-4">
-                <a href="https://www.linkedin.com/in/gautham-dv/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors">
+                <a href="https://www.linkedin.com/in/gautham-dv/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors" style={{ background: "hsl(var(--glow-cyan) / 0.1)", color: "hsl(var(--glow-cyan))" }}>
                   <Linkedin size={18} />
                 </a>
-                <a href="https://github.com/gauthamdv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors">
+                <a href="https://github.com/gauthamdv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors" style={{ background: "hsl(var(--glow-purple) / 0.1)", color: "hsl(var(--glow-purple))" }}>
                   <Github size={18} />
                 </a>
               </div>
