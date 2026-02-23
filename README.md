@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my projects, skills, and experience in AI/ML.
 
-🔗 **Live**: [gauthamdv-portfolio.lovable.app](https://gauthamdv-portfolio.lovable.app)
+🔗 **Live**: [gauthamdv portfolio github pages](https://gauthamdv.github.io/ai-mindscape-09/) | [gauthamdv portfolio lovable app](https://gauthamdv-portfolio.lovable.app)
 
 ## Tech Stack
 
