@@ -7,18 +7,21 @@ const projects = [
     description: "Deep learning project generating stickman pose animations using an RNN trained on MediaPipe-extracted human pose keypoints. Demonstrates sequence modeling, animation generation, and RNN architecture design.",
     tech: ["Python", "RNN", "MediaPipe", "Deep Learning"],
     accent: "cyan" as const,
+    github: "https://github.com/gauthamdv/StickmanAnimation-RNN",
   },
   {
     title: "Offline AI Assistant",
     description: "A lightweight offline AI assistant built with Flask and an open-source LLM (Mistral 7B), designed to run fully on CPU. Capable of launching Linux applications and scripts.",
     tech: ["Flask", "LLM", "Mistral 7B", "Python"],
     accent: "purple" as const,
+    github: "https://github.com/gauthamdv/offline-ai-assistant",
   },
   {
     title: "Fraud Detection – XGBoost",
     description: "Machine learning project using XGBoost for detecting fraudulent transactions with feature engineering and class imbalance handling. Complete ML workflow from preprocessing to evaluation.",
     tech: ["XGBoost", "Scikit-learn", "Python", "ML"],
     accent: "pink" as const,
+    github: "https://github.com/gauthamdv/fraud-detection-xgboost",
   },
 ];
 
@@ -73,7 +76,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <a
-                  href="https://github.com/gauthamdv"
+                  href={p.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
@@ -83,6 +86,17 @@ const Projects = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div variants={fadeUp} custom={projects.length + 2} className="flex justify-center mt-10">
+            <a
+              href="https://github.com/gauthamdv?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glow-button inline-flex items-center gap-2"
+            >
+              View More Projects <ExternalLink size={16} />
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
