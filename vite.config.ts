@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_PAGES ? "/ai-mindscape-09/" : "/",
+  base: process.env.GITHUB_PAGES ? "/Portfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
