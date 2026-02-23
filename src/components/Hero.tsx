@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Download } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
 
 const Hero = () => {
@@ -39,6 +39,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
               <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="glow-button">View Projects</button>
               <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="glow-button-outline">Contact Me</button>
+              <a href={`${import.meta.env.BASE_URL}Resume_Gautham_DV.pdf`} download className="glow-button-outline inline-flex items-center gap-2"><Download size={18} /> Resume</a>
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start">
