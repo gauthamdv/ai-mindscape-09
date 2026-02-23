@@ -37,8 +37,8 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
-              <a href="#projects" className="glow-button">View Projects</a>
-              <a href="#contact" className="glow-button-outline">Contact Me</a>
+              <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="glow-button">View Projects</button>
+              <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="glow-button-outline">Contact Me</button>
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start">
