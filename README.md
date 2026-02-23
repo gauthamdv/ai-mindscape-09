@@ -16,8 +16,8 @@ Personal portfolio website showcasing my projects, skills, and experience in AI/
 ## Getting Started
 
 ```sh
-git clone https://github.com/gauthamdv/ai-mindscape-09.git
-cd ai-mindscape-09
+git clone https://github.com/gauthamdv/Portfolio.git
+cd Portfolio
 npm install
 npm run dev
 ```
